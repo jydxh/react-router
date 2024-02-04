@@ -26,6 +26,7 @@ export default function App() {
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
           <Route path="*" element={<NoMatch />} />
+          <Route path="another" element={<AnotherMatch/>}/>
         </Route>
       </Routes>
     </div>
@@ -50,6 +51,9 @@ function Layout() {
           </li>
           <li>
             <Link to="/nothing-here">Nothing Here</Link>
+          </li>
+          <li>
+            <Link to="/another">another match</Link>
           </li>
         </ul>
       </nav>
@@ -97,4 +101,11 @@ function NoMatch() {
       </p>
     </div>
   );
+}
+
+function AnotherMatch(){
+  return (<div>
+    <h2>Anohter no match</h2>
+    <p><Link to="/about" >back to about</Link></p>
+  </div>)
 }
